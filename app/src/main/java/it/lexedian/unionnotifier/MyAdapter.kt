@@ -25,13 +25,15 @@ class MyAdapter(var announcements : MutableList<Announcement>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.layout.findViewById<TextView>(R.id.cat)?.text = announcements[position].cat
         when (announcements[position].cat) {
-            "CAMPAIGN"  ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#872bc4"))
-            "EVENT"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#14caf7"))
-            "UPDATE"    ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#9dc668"))
-            "ERROR"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#bc3846"))
-            "FIXED"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#f249dc"))
-            "IMPORTANT" ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#ed5b60"))
-            else        ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#000000"))
+            "CAMPAIGN"      ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#872bc4"))
+            "EVENT"         ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#14caf7"))
+            "UPDATE"        ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#9dc668"))
+            "ERROR"         ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#bc3846"))
+            "FIXED"         ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#f249dc"))
+            "IMPORTANT"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#ed5b60"))
+            "INFORMATION"   ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#4271d6"))
+            "MAINTENANCE"   ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#f78d14"))
+            else            ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#000000"))
         }
         if(announcements[position].isNew)
             holder.layout.findViewById<ImageView>(R.id.star)?.setImageResource(R.drawable.ic_star_black_24dp)
