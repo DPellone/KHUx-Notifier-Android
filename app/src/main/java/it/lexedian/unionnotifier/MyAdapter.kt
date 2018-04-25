@@ -16,27 +16,27 @@ class MyAdapter(var announcements : MutableList<Announcement>) : RecyclerView.Ad
         return announcements.count()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        val l = LayoutInflater.from(parent?.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val l = LayoutInflater.from(parent.context)
                 .inflate(R.layout.list_element, parent,false)
         return ViewHolder(l as LinearLayout)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.layout?.findViewById<TextView>(R.id.cat)?.text = announcements[position].cat
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.layout.findViewById<TextView>(R.id.cat)?.text = announcements[position].cat
         when (announcements[position].cat) {
-            "CAMPAIGN"  ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#872bc4"))
-            "EVENT"     ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#14caf7"))
-            "UPDATE"    ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#9dc668"))
-            "ERROR"     ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#bc3846"))
-            "FIXED"     ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#f249dc"))
-            "IMPORTANT" ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#ed5b60"))
-            else        ->  holder?.layout?.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#000000"))
+            "CAMPAIGN"  ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#872bc4"))
+            "EVENT"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#14caf7"))
+            "UPDATE"    ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#9dc668"))
+            "ERROR"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#bc3846"))
+            "FIXED"     ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#f249dc"))
+            "IMPORTANT" ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#ed5b60"))
+            else        ->  holder.layout.findViewById<TextView>(R.id.cat)?.setTextColor(Color.parseColor("#000000"))
         }
         if(announcements[position].isNew)
-            holder?.layout?.findViewById<ImageView>(R.id.star)?.setImageResource(R.drawable.ic_star_black_24dp)
+            holder.layout.findViewById<ImageView>(R.id.star)?.setImageResource(R.drawable.ic_star_black_24dp)
 
-        holder?.layout?.findViewById<TextView>(R.id.title)?.text = announcements[position].title
+        holder.layout.findViewById<TextView>(R.id.title)?.text = announcements[position].title
     }
 
     class ViewHolder(var layout : LinearLayout) : RecyclerView.ViewHolder(layout)

@@ -14,7 +14,7 @@ interface AnnouncementsDAO {
     @Query("SELECT * FROM announcement")
     fun getAll(): List<Announcement>
 
-    @Query("SELECT * FROM announcement WHERE id=:arg0")
+    @Query("SELECT * FROM announcement WHERE id=:Id")
     fun get(Id: Int): List<Announcement>
 
     @Insert
